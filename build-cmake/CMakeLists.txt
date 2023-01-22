@@ -27,6 +27,22 @@ if (${WORDS_BIGENDIAN})
 	ADD_DEFINITIONS(-DWORDS_BIGENDIAN)
 endif()
 
+message("MV: BUILD SHARED LIBS? ")
+if(BUILD_SHARED_LIBS)
+	message("yes")
+else()
+	message("no")
+endif()
+
+# MV change
+set(BUILD_SHARED_LIBS OFF)
+message("MV: BUILD SHARED LIBS AFTER MV? ")
+if(BUILD_SHARED_LIBS)
+	message("yes")
+else()
+	message("no")
+endif()
+
 IF (MSVC AND BUILD_SHARED_LIBS)
 	ADD_DEFINITIONS(-DPROTOBUF_C_USE_SHARED_LIB)
 ENDIF (MSVC AND BUILD_SHARED_LIBS)
